@@ -7,4 +7,15 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\Home\Index.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
