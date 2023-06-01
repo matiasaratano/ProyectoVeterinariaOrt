@@ -9,7 +9,7 @@ Email varchar(20),
 Telefono varchar(20)
 )
 
-INSERT INTO CLIENTES(Dni,Nombre,Apellido,Email,Telefono)values(22556890,'GOMEZ','ESTEBAN','GESTEBAN@GMAIL.COM','6789-9876'),(32678654,'LOPEZ','MARIA','MLOPEZ@GMAIL.COM','667-9876')
+INSERT INTO CLIENTES(Dni,Nombre,Apellido,Email,Telefono)values(22556890,'GOMEZ','ESTEBAN','GESTEBAN@GMAIL.COM','67899876'),(32678654,'LOPEZ','MARIA','MLOPEZ@GMAIL.COM','6679876')
 
 CREATE TABLE MASCOTAS
 (
@@ -59,9 +59,9 @@ SELECT * FROM RESERVAS_TURNOS
 --DELETE  FROM RESERVAS_TURNOS WHERE Id_Turno=1
 
 --TURNOS DISPONIBLES
-SELECT T.DIA,T.HORA 
-FROM TURNOS T LEFT JOIN RESERVAS_TURNOS R ON T.ID=R.Id_Turno
-WHERE R.Id_Turno IS NULL
+select * from Turnos T 
+left join Reservas_Turnos R on T.Dia = R.Dia AND T.Hora = R.Horario
+WHERE R.Horario is NULL;
 
 --LISTADO DE RESERVAS
 SELECT 
@@ -71,8 +71,8 @@ when 5 then 'Jueves' when 6 then 'Viernes'
 when 7 then 'Sábado' when 1 then 'Domingo' end AS DIA
 , T.DIA FECHA,T.HORA
 ,M.Nombre,M.Tipo
-,C.Apellido,C.Nombre,C.Dni 
-FROM TURNOS T INNER JOIN RESERVAS_TURNOS R ON T.ID=R.Id_Turno
+,C.Apellido,C.Nombre,C.Dni
+FROM TURNOS T INNER JOIN RESERVAS_TURNOS R ON T.Dia = R.Dia AND T.Hora = R.Horario
 INNER JOIN CLIENTES C ON R.Dni=C.Dni
 INNER JOIN MASCOTAS M ON R.Id_Mascota= M.Id_Mascota
 WHERE  T.DIA Between 20230529 AND 20230530

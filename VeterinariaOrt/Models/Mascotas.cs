@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VeterinariaOrt.Models
 {
@@ -12,6 +13,11 @@ namespace VeterinariaOrt.Models
         public string? Tipo { get; set; }
         [Required]
         public int Edad { get; set; }
+        
+        [Required][ForeignKey("DNI")]
+        public Clientes Clientes { get; set; }
+
+
 
     }
 }

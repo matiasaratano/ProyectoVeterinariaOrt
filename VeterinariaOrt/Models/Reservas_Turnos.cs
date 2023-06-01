@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VeterinariaOrt.Models
 {
@@ -6,15 +8,19 @@ namespace VeterinariaOrt.Models
     {
         [Key]
         public int Id_Turno { get; set; }
+
         [Required]
+        [ForeignKey("Dni")]
+        public Clientes Clientes { get; set; }
         public int Dni { get; set; }
         [Required]
-        public int Id_Mascota { get; set; }
+        [ForeignKey("Id_Mascota")]
+        public Mascotas Mascotas { get; set; }
         [Required]
         public string? Dia { get; set; }
         [Required]
         public string? Horario { get; set; }
-        [Required]
-        public int Matricula { get; set; }
+        [ForeignKey("Matricula")]
+        public Veterinarios Veterinarios { get; set; }
     }
 }

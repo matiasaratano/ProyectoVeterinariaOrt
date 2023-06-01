@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VeterinariaOrt.Models
 {
@@ -12,7 +13,7 @@ namespace VeterinariaOrt.Models
         public string? Apellido { get; set; }
 
         public string? Email { get; set; }
-
+        
         public int Telefono { get; set; }
 
 
