@@ -14,6 +14,6 @@ public class VeterinariaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source = DESKTOP-0DV3D4L\\MSSQLSERVER01 ; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true");
+        optionsBuilder.UseSqlServer("Data Source = DESKTOP-PLMOM31; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true");
     }
 }
