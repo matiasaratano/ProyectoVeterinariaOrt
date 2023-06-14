@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace VeterinariaOrt.Migrations
 {
     [DbContext(typeof(VeterinariaContext))]
-    [Migration("20230608003852_init")]
-    partial class init
+    [Migration("20230614223420_innit")]
+    partial class innit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
