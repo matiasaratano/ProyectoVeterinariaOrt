@@ -6,6 +6,7 @@ namespace VeterinariaOrt.Models
     public class Clientes
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DNI { get; set; }
         [Required]
         public string? Nombre { get; set; }

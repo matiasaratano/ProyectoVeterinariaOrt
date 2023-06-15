@@ -23,10 +23,7 @@ namespace VeterinariaOrt.Migrations
             modelBuilder.Entity("VeterinariaOrt.Models.Clientes", b =>
                 {
                     b.Property<int>("DNI")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DNI"));
 
                     b.Property<string>("Apellido")
                         .IsRequired()

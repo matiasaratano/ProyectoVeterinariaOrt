@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace VeterinariaOrt.Migrations
 {
     [DbContext(typeof(VeterinariaContext))]
-    [Migration("20230614223420_innit")]
-    partial class innit
+    [Migration("20230615002750_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,10 +26,7 @@ namespace VeterinariaOrt.Migrations
             modelBuilder.Entity("VeterinariaOrt.Models.Clientes", b =>
                 {
                     b.Property<int>("DNI")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DNI"));
 
                     b.Property<string>("Apellido")
                         .IsRequired()
