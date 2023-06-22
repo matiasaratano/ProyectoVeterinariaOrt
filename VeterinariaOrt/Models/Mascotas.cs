@@ -13,11 +13,10 @@ namespace VeterinariaOrt.Models
         public string? Tipo { get; set; }
         [Required]
         public int Edad { get; set; }
-        
-        [Required]//[ForeignKey("DNI")]
+
+        [Required][ForeignKey("Usuario")]
         public int DNI { get; set; }
 
-
-
+        Usuario Usuario { get; set; }
     }
 }

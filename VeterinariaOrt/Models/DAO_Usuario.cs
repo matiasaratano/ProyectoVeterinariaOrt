@@ -1,18 +1,18 @@
 ﻿using VeterinariaOrt.Models;
 namespace VeterinariaOrt.Models;
 
-public class DAO_Clientes
+public class DAO_Usuario
 {
     VeterinariaContext context = new VeterinariaContext();
 
 
-    public void CrearClientes(Clientes cliente)
+    public void CrearUsuario(Usuario Usuario)
     { 
 
-
+       
         try
         {
-            context.Clientes.Add(cliente);
+            context.Usuario.Add(Usuario);
             context.SaveChanges();           
         }
         catch (Exception ex)

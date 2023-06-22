@@ -2,7 +2,7 @@
 
 namespace VeterinariaOrt.Controllers
 {
-    public class MascotasController : Controller
+    public class Reservas_TurnosController : Controller
     {
         public IActionResult Index()
         {

@@ -1,80 +1,36 @@
 ﻿@model Mascotas
+@{
+    ViewData["Title"] = "Mascotas";
+   
+}
 
-<h2 style="color:coral; text-align:center">Formulario para agregar Mascota</h2>
+
+<h2 style="color:coral; text-align:center">AGREGAR MASCOTAS</h2>
 
 <form asp-action="CrearMascotas">
     <div class="form-group">
-        <label for="nombre" class="control-label">Nombre Mascota:</label>
+        <label for="nombre" class="control-label">NOMBRE</label>
         <input asp-for="Nombre" type="text" id="nombre" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label for="Tipo" class="control-label">Tipo:</label>
+        <label for="Tipo" class="control-label">Tipo</label>
         <input asp-for="Tipo" type="text" id="Tipo" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label for="Edad" class="control-label">Edad:</label>
+        <label for="Edad" class="control-label">Edad</label>
         <input asp-for="Edad" type="text" id="Edad" class="form-control" />
     </div>
 
-    <div class="form-group">
-        <label for="DNI" class="control-label">DNI Dueño:</label>
-        <input asp-for="DNI" type="text" id="DNI" class="form-control" />
-    </div>
+    @*<div class="form-group">
+        <label for="DNI" class="control-label">Clientes.DNI</label>
+        <input asp-for="FK_DNI" type="text" id="DNI class="form-control" />
+    </div>*@
 
     <div class="form-group">
-        <button type="submit"  class="btn-success form-control">Guardar</button>
+        <button type="submit" style="margin-top:10px; max-width:30%" class="btn-success form-control">Guardar</button>
     </div>
 
 
 </form>
-
-
-<style>
-
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    form {
-        max-width: 400px;
-        margin: 20px auto;
-        background: #f4f4f4;
-        padding: 20px;
-        border-radius: 5px;
-    }
-
-    .form-group {
-        margin-bottom: 10px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    input[type="email"] {
-        width: 100%;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-    }
-
-    input[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        background: #4caf50;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        border-radius: 3px;
-    }
-</style>

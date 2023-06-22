@@ -1,4 +1,5 @@
-﻿using VeterinariaOrt.Models;
+﻿
+using VeterinariaOrt.Models;
 namespace VeterinariaOrt.Models;
 
 public class DAO_Mascota
@@ -12,7 +13,7 @@ public class DAO_Mascota
 
         try
         {
-            context.Mascotas.Add(mascota);
+                context.Mascotas.Add(mascota);
             context.SaveChanges();
 
 
@@ -23,6 +24,7 @@ public class DAO_Mascota
             Console.WriteLine("Ocurrió un error: " + ex.InnerException?.Message);
 
         }
+        
 
 
     }
