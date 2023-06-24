@@ -23,7 +23,7 @@
                         <form asp-controller="Inicio" asp-action="Registrarse" method="post">
 
                             <input class="form-control mb-3" type="text" placeholder="Dni" asp-for="DNI" required />
-                            <input class="form-control mb-3" type="text" placeholder="Apellido" asp-for="Apellido"  required />
+                            <input class="form-control mb-3" type="text" placeholder="Apellido" asp-for="Apellido" required />
                             <input class="form-control mb-3" type="text" placeholder="Nombre" asp-for="Nombre" required />
                             <input class="form-control mb-3" type="text" placeholder="Correo" asp-for="Mail" required />
                             <input class="form-control mb-3" type="text" placeholder="Telefono" asp-for="Telefono" required />
@@ -43,6 +43,9 @@
                             Ya tienes una cuenta? <a href="@Url.Action("IniciarSesion","Inicio")">Iniciar Sesion!</a>
                         </form>
                     </div>
+                    <div class="div-img">
+                        <img src="../images/logo.jpeg" alt="" class="logo">
+                    </div>
                 </div>
 
             </div>
@@ -54,3 +57,14 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<style>
+    .div-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 250px;
+        height: 250px;
+    }
+</style>
