@@ -1,1 +1,191 @@
-﻿@model Clientes<!DOCTYPE html><html><head>    <title>Formulario de Registro:</title></head><body>    <h1>Formulario de inicio de sesión</h1>    <form asp-action="CrearClientes">        <div class="form-group">            <label for="nombre" class="control-label">Nombre:</label>            <input asp-for="Nombre" type="text" id="nombre" name="nombre" class="form-control" required>        </div>        <div class="form-group">            <label for="apellido" class="control-label">Apellido:</label>            <input asp-for="Apellido" type="text" id="apellido" class="form-control" name="apellido" required>        </div>        <div class="form-group">            <label for="dni" class="control-label">DNI:</label>            <input asp-for="DNI" type="text" id="dni" name="dni" class="form-control" required>        </div>        <div class="form-group">            <label for="email" class="control-label">Correo electrónico:</label>            <input asp-for="Email" type="email" id="email" class="form-control" name="email" required>        </div>        <div class="form-group">            <label for="telefono" class="control-label">Teléfono:</label>            <input asp-for="Telefono" type="text" id="telefono" name="telefono" class="form-control" required>        </div>        <div class="form-group">            <input type="submit" value="Iniciar sesión">        </div>    </form></body></html><style>    body {        font-family: Arial, sans-serif;        margin: 0;        padding: 20px;    }    h1 {        text-align: center;    }    form {        max-width: 400px;        margin: 20px auto;        background: #f4f4f4;        padding: 20px;        border-radius: 5px;    }    .form-group {        margin-bottom: 10px;    }    label {        display: block;        margin-bottom: 5px;    }    input[type="text"],    input[type="email"] {        width: 100%;        padding: 5px;        border: 1px solid #ccc;        border-radius: 3px;    }    input[type="submit"] {        width: 100%;        padding: 10px;        background: #4caf50;        border: none;        color: #fff;        cursor: pointer;        border-radius: 3px;    }</style>
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bienvenido a la Veterinaria Ort</h1>
+        <a href="#" class="login-button">Inicie Sesión</a>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+
+            <div class="col-md-6">
+                <h1 class="display-5 fw-bolder">Veterinaria Ort</h1>
+                <div class="fs-5 mb-5">
+                </div>
+                <h2>Sobre Nosotros</h2>
+                <p>En nuestra veterinaria, nos apasiona el cuidado de los animales y nos comprometemos a brindar servicios de alta calidad para mantener a tus mascotas felices y saludables.</p>
+                <p>Nuestro equipo de veterinarios altamente capacitados y amantes de los animales está dedicado a proporcionar un cuidado integral y compasivo a tus compañeros peludos. Realizamos exámenes completos, diagnósticos precisos y ofrecemos opciones de tratamiento efectivas para una amplia variedad de condiciones médicas.</p>
+                <p>En nuestras instalaciones modernas y equipadas con tecnología de vanguardia, nos especializamos en servicios que incluyen atención médica preventiva, vacunaciones, desparasitación, esterilización, cirugía, atención dental y mucho más.</p>
+                <p>Valoramos la relación especial entre las mascotas y sus dueños, y nos esforzamos por ofrecer un entorno cálido y acogedor donde tanto tú como tu mascota se sientan cómodos y bienvenidos. Nos comprometemos a escuchar tus preocupaciones, responder tus preguntas y brindarte la tranquilidad de que tus seres queridos están en las mejores manos.</p>
+                <p>Gracias por confiar en nosotros para el cuidado de tus mascotas. Esperamos poder servirte y ser parte de la salud y felicidad de tus compañeros peludos.</p>
+            </div>
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://d2qc4bb64nav1a.cloudfront.net/cdn/13/images/curso-online-de-auxiliar-en-veterinaria_l_primaria_1_1657574051.jpg" alt="..." /></div>
+        </div>
+    </div>
+</section>
+<!-- Related items section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">Nuestro Clientes nos eligen!</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="../images/5.jpeg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Perro 1</h5>
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="../images/2.jpeg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">perro 2</h5>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="../images/3.jpeg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Perro 3</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="../images/4.jpeg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Perro 4</h5>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">Nuestra Ubicacion</h2>
+        <div class="mapa"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d90350.87980153371!2d-61.278667836494115!3d-35.77926120539236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1687391200281!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+</section>
+<!-- Footer-->
+
+
+
+
+
+<style type="text/css">
+
+    /* Estilos generales */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Estilos de la sección de imagen de fondo */
+    .hero {
+        background-image: url('../images/1.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        max-width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .hero-content {
+        text-align: center;
+        color: #fff;
+        position: relative;
+        //z-index: 1;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .login-button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #ff9800;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 4px;
+    }
+
+    /* Estilos de la sección de descripción */
+    .description {
+        background-color: #f2f2f2;
+        padding: 50px;
+    }
+
+        .description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .description p {
+            font-size: 16px;
+        }
+
+    .mapa {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+        .mapa iframe {
+            width: 100%;
+        }
+</style>
