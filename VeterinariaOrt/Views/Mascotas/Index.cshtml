@@ -5,32 +5,79 @@
 }
 
 
-<h2 style="color:coral; text-align:center">AGREGAR MASCOTAS</h2>
-
-<form asp-action="CrearMascotas">
-    <div class="form-group">
-        <label for="nombre" class="control-label">NOMBRE</label>
-        <input asp-for="Nombre" type="text" id="nombre" class="form-control" />
+    <h1>Formulario para agregar Mascota:</h1>
+    <form asp-action="CrearMascotas">
+        <div class="form-group">
+            <label for="Nombre" class="control-label">Nombre:</label>
+            <input asp-for="Nombre" type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Tipo" class="control-label">Tipo:</label>
+            <input asp-for="Tipo" type="text" id="Tipo" name="Tipo" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Edad" class="control-label">Edad:</label>
+            <input asp-for="Edad" type="text" id="Edad" name="Edad" class="form-control" required>
+        </div>
+        @*<div class="form-group">
+            <label for="DNI" class="control-label">Clientes.DNI</label>
+            <input asp-for="FK_DNI" type="text" id="DNI class="form-control" />
+        </div>*@
+        <div class="form-group">
+            <button type="submit" value="Iniciar sesión">Guardar</button>
+        </div>
+    </form>
+    <div class="div-img">
+        <img src="../images/logo.jpeg" alt="" class="logo-grande">
     </div>
+<style>
+    h1 {
+        text-align: center;
+        margin-top:30px;
+    }
 
-    <div class="form-group">
-        <label for="Tipo" class="control-label">Tipo</label>
-        <input asp-for="Tipo" type="text" id="Tipo" class="form-control" />
-    </div>
+    form {
+        max-width: 400px;
+        margin: 20px auto;
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 5px;
+    }
 
-    <div class="form-group">
-        <label for="Edad" class="control-label">Edad</label>
-        <input asp-for="Edad" type="text" id="Edad" class="form-control" />
-    </div>
+    .form-group {
+        margin-bottom: 10px;
+    }
 
-    @*<div class="form-group">
-        <label for="DNI" class="control-label">Clientes.DNI</label>
-        <input asp-for="FK_DNI" type="text" id="DNI class="form-control" />
-    </div>*@
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
 
-    <div class="form-group">
-        <button type="submit" style="margin-top:10px; max-width:30%" class="btn-success form-control">Guardar</button>
-    </div>
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
 
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background: #0d6efd;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    .div-img {
+        display: flex;
+        justify-content: center;
+    }
 
-</form>
+    .logo-grande {
+        width: 250px;
+        height: 250px;
+    }
+
+</style>
