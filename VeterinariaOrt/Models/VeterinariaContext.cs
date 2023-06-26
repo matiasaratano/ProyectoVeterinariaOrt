@@ -18,26 +18,29 @@ public partial class VeterinariaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        //modelBuilder.Entity<Reservas_Turnos>()
-        //.HasOne(r => r.Usuario)
-        //.WithMany()
-        //.HasForeignKey(r => r.Dni)
-        //.OnDelete(DeleteBehavior.Restrict);
 
-        //modelBuilder.Entity<Reservas_Turnos>()
-        //    .HasOne(r => r.Id_Mascota)
-        //    .WithMany()
-        //    .HasForeignKey(r => r.IdMascota)
-        //    .OnDelete(DeleteBehavior.Restrict);
+        base.OnModelCreating(modelBuilder);
 
-        //// Otros mapeos y configuraciones...
+        modelBuilder.Entity<Reservas_Turnos>()
+            .HasOne(r => r.Usuario)
+            .WithMany()
+            .HasForeignKey(r => r.Dni)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        //base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Reservas_Turnos>()
+            .HasOne(r => r.Mascotas)
+            .WithMany()
+            .HasForeignKey(r => r.Id_Mascota)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        // Otros mapeos y configuraciones...
+
+        base.OnModelCreating(modelBuilder);
 
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.IdUsuario).HasName("PK__USUARIO__5B65BF97CCA9C4A1");
+            entity.HasKey(e => e.IdUsuario).HasName("DESKTOP-0DV3D4L\\MSSQLSERVER01");
 
             entity.ToTable("Usuario");
 
@@ -60,9 +63,10 @@ public partial class VeterinariaContext : DbContext
     public virtual DbSet<Reservas_Turnos> Reservas_Turnos { get; set; }
     public virtual DbSet<Turnos> Turnos { get; set; }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
+    {
+        optionsBuilder.UseSqlServer("Data Source = DESKTOP-0DV3D4L\\MSSQLSERVER01; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true");
+    }
 
 }
 

@@ -14,9 +14,9 @@ namespace VeterinariaOrt.Models
         [Required]
         public int Edad { get; set; }
 
-        //[Required][ForeignKey("Usuario")]
-        public int DNI { get; set; }
+        [ForeignKey("Usuario")]
+        public string DNI { get; set; }
 
-        //Usuario Usuario { get; set; }
+        public virtual Usuario Propietario { get; set; }
     }
 }
