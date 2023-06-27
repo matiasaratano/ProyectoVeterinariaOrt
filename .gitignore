@@ -365,3 +365,4 @@ FodyWeavers.xsd
 
 
 */appsettings.json
+VeterinariaOrt/Models/VeterinariaContext.cs
