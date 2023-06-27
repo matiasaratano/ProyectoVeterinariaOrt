@@ -27,11 +27,6 @@ public partial class VeterinariaContext : DbContext
             .HasForeignKey(r => r.Dni)
             .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<Reservas_Turnos>()
-            .HasOne(r => r.Mascotas)
-            .WithMany()
-            .HasForeignKey(r => r.Id_Mascota)
-            .OnDelete(DeleteBehavior.Restrict);
 
         // Otros mapeos y configuraciones...
 
@@ -57,8 +52,7 @@ public partial class VeterinariaContext : DbContext
 
         });
     }
-        public virtual DbSet<Usuario> Usuario { get; set; }
-    public virtual DbSet<Veterinarios> Veterinarios { get; set; }
+    public virtual DbSet<Usuario> Usuario { get; set; }
     public virtual DbSet<Mascotas> Mascotas { get; set; }
     public virtual DbSet<Reservas_Turnos> Reservas_Turnos { get; set; }
     public virtual DbSet<Turnos> Turnos { get; set; }

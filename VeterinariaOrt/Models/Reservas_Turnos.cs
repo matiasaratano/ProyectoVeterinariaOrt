@@ -17,16 +17,11 @@ namespace VeterinariaOrt.Models
 
         public Usuario Usuario { get; set; }
 
-        [Required] [ForeignKey("Mascotas")]
-        public int Id_Mascota { get; set; }
-        public Mascotas Mascotas { get; set; }
-
         [Required]
+
         public string? Dia { get; set; }
         [Required]
+
         public string? Horario { get; set; }
-        [Required,ForeignKey("Veterinarios")]
-        public int Matricula { get; set; }
-        public Veterinarios Veterinarios { get; set; }
     }
 }

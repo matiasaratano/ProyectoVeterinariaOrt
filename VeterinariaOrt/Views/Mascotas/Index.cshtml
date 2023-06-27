@@ -1,5 +1,7 @@
 ﻿@model Mascotas
+
 @{
+
     ViewData["Title"] = "Mascotas";
    
 }
@@ -19,10 +21,10 @@
             <label for="Edad" class="control-label">Edad:</label>
             <input asp-for="Edad" type="text" id="Edad" name="Edad" class="form-control" required>
         </div>
-        @*<div class="form-group">
-            <label for="DNI" class="control-label">Clientes.DNI</label>
-            <input asp-for="FK_DNI" type="text" id="DNI class="form-control" />
-        </div>*@
+        <div class="form-group">
+            <label for="DNI" class="control-label">Usuario.DNI</label>
+            <input asp-for="DNI" type="text" id="DNI" class="form-control" />
+        </div>
         <div class="form-group">
             <button type="submit" value="Iniciar sesión">Guardar</button>
         </div>
