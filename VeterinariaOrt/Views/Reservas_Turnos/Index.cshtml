@@ -1,4 +1,4 @@
-﻿@model VeterinariaOrt.Models.Reservas_Turnos
+﻿@*@model List<Turnos>;
 @{
     ViewData["Title"] = "Reservas";
 }
@@ -12,7 +12,25 @@
 </head>
 <body>
     <div>
-        <h2>Vista Reservas Turnoas</h2>
+        <h2>Vista Reservas Turnos</h2>
     </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>DIA</th>
+                <th>HORA</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Turnos t in Model)
+            {
+                <tr>
+                    <td>@t.Dia</td>
+                    <td>@t.Hora</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
 </body>
-</html>
+</html>*@

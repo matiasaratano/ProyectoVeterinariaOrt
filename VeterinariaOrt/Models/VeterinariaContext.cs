@@ -59,7 +59,7 @@ public partial class VeterinariaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
     {
-        optionsBuilder.UseSqlServer("cadenaSQL");
+        optionsBuilder.UseSqlServer("Data Source = DESKTOP-0DV3D4L\\MSSQLSERVER01; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true");
     }
 
 }
