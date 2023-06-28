@@ -7,7 +7,8 @@ namespace VeterinariaOrt.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required][ForeignKey("Turno")]
+        [Required]
+        [ForeignKey("Turno")]
         public int Id_Turno { get; set; }
 
         public Turnos Turno { get; set; }
@@ -16,12 +17,5 @@ namespace VeterinariaOrt.Models
         public int Dni { get; set; }
 
         public Usuario Usuario { get; set; }
-
-        [Required]
-
-        public string? Dia { get; set; }
-        [Required]
-
-        public string? Horario { get; set; }
     }
 }

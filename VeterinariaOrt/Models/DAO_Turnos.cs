@@ -11,8 +11,8 @@ namespace VeterinariaOrt.Models
             List<Turnos> turnos = new List<Turnos>();
             try
             {
-                string connectionString = "Data Source = DESKTOP-PLMOM31; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true";
-                string sqlQuery = "SELECT * FROM Turnos";
+                string connectionString = "Data Source = DESKTOP-0DV3D4L\\MSSQLSERVER01; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true";
+                string sqlQuery = "SELECT A.Id,A.Dia,A.Hora FROM Turnos a LEFT JOIN Reservas_Turnos v ON A.Id = V.Id_Turno WHERE V.Id_Turno IS NULL";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
