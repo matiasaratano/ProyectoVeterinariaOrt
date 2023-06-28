@@ -11,7 +11,7 @@ namespace VeterinariaOrt.Models
             List<Turnos> turnos = new List<Turnos>();
             try
             {
-                string connectionString = "Data Source = DESKTOP-0DV3D4L\\MSSQLSERVER01; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true";
+                string connectionString = "Data Source = localhost, 57000; initial catalog = Veterinaria; User ID=SA;Password=Matiasd123;Encrypt=true; TrustServerCertificate=true;";
                 string sqlQuery = "SELECT A.Id,A.Dia,A.Hora FROM Turnos a LEFT JOIN Reservas_Turnos v ON A.Id = V.Id_Turno WHERE V.Id_Turno IS NULL";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -49,7 +49,7 @@ namespace VeterinariaOrt.Models
             List<Turnos> turnos = new List<Turnos>();
             try
             {
-                string connectionString = "Data Source = DESKTOP-0DV3D4L\\MSSQLSERVER01; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true";
+                string connectionString = "Data Source = localhost, 57000; initial catalog = Veterinaria; User ID=SA;Password=Matiasd123;Encrypt=true; TrustServerCertificate=true;";
                 string sqlQuery = "SELECT  A.Dia,A.Hora, m.Nombre, m.Tipo, u.DNI, u.Apellido, u.Nombre\r\nFROM Turnos a INNER JOIN Reservas_Turnos v ON A.Id = V.Id_Turno \r\nINNER JOIN Usuario u ON u.DNI = v.Dni\r\nINNER JOIN Mascotas m ON u.dni = m.DNI\r\nWHERE u.DNI = " + dni;
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -81,7 +81,7 @@ namespace VeterinariaOrt.Models
         public void confirmarTurno(int turnoId)
         {
             int dniSession = 1;
-            string connectionString = "Data Source = DESKTOP-0DV3D4L\\MSSQLSERVER01; initial catalog = Veterinaria ;Integrated Security = true ;Encrypt=true; TrustServerCertificate=true";
+            string connectionString = "Data Source = localhost, 57000; initial catalog = Veterinaria; User ID=SA;Password=Matiasd123;Encrypt=true; TrustServerCertificate=true;";
             string sqlQuery = "INSERT INTO Reservas_Turnos (Id_Turno,Dni) values("+ turnoId + ", " + dniSession + ")";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

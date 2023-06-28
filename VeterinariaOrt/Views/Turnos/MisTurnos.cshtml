@@ -12,7 +12,7 @@
 </head>
 <body>
     <div>
-        <h2>Vista Reservas Turnos</h2>
+        <h2 style="text-align: center; margin: 40px 0px;">Turnos Reservados</h2>
     </div>
     <table class="table">
         <thead>
@@ -34,3 +34,36 @@
     </table>
 </body>
 </html>
+
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table thead th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .table tbody td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tbody tr:hover {
+            background-color: #e6e6e6;
+        }
+</style>
