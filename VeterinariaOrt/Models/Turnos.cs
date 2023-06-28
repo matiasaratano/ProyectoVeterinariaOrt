@@ -10,5 +10,9 @@ namespace VeterinariaOrt.Models
         public string? Dia { get; set; }
         [Required]
         public string? Hora { get; set; }
+
+        public string? Nombre { get; set; }
+
+        public string? Tipo { get; set; }
     }
 }
