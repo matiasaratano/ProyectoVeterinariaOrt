@@ -63,7 +63,6 @@ namespace VeterinariaOrt.Models
                             while (reader.Read())
                             {
                                 Turnos turno = new Turnos();
-//turno.Id = reader.GetInt32(0);
                                 turno.Dia = reader.GetString(1);
                                 turno.Hora = reader.GetString(2);
 
