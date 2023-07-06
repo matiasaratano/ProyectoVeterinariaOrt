@@ -14,28 +14,32 @@
     <h2 style="text-align: center; margin: 40px 0px;">Turnos Disponibles</h2>
     <form asp-controller="Turnos" asp-action="ReservarTurno" method="post">
         <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>DIA</th>
-                <th>HORA</th>
-                <th>RESERVAR</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Turnos t in Model)
-            {
+            <thead>
                 <tr>
-                    <td>@t.Id</td>
-                    <td>@t.Dia</td>
-                    <td>@t.Hora</td>
-                        <td><button class="btn" type="submit" name="turnoId" value="@t.Id">Reservar</button></td>
+                    <th>ID</th>
+                    <th>DIA</th>
+                    <th>HORA</th>
+                    <th>RESERVAR</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (Turnos t in Model)
+                {
+                    <tr>
+                        <td>@t.Id</td>
+                        <td>@t.Dia</td>
+                        <td>@t.Hora</td>
+                        <td><button class="btn" type="submit" name="turnoId" value="@t.Id">Reservar</button></td>
+                    </tr>
+                }
 
-        </tbody>
+            </tbody>
         </table>
     </form>
+    @if (!string.IsNullOrEmpty(TempData["Mensaje"] as string))
+    {
+        <div class="alert alert-warning">@TempData["Mensaje"]</div>
+    }
 </body>
 </html>
 

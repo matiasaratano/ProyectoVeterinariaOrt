@@ -3,6 +3,7 @@ using VeterinariaOrt.Models;
 using VeterinariaOrt.Servicios.Contrato;
 using VeterinariaOrt.Servicios.Implementacion;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,17 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.ExpireTimeSpan = TimeSpan.FromMinutes(2);
     }
     );
+
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add(
+        new ResponseCacheAttribute
+        {
+            NoStore = true,
+            Location = ResponseCacheLocation.None,
+        });
+
+});
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
