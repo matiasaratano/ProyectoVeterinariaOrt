@@ -24,11 +24,11 @@ namespace VeterinariaOrt.Controllers
 
             ClaimsPrincipal claimsuser = HttpContext.User;
             string nombreUsuario = "";
+           
 
             if (claimsuser.Identity.IsAuthenticated) {
 
                 nombreUsuario = claimsuser.Claims.Where(c => c.Type == ClaimTypes.Name)
-
                     .Select(c => c.Value).SingleOrDefault();
             }
 

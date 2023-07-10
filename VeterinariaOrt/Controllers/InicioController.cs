@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 
 using System.Security.Claims;
 
+
 namespace VeterinariaOrt.Controllers
 {
     public class InicioController : Controller
     {
+
         private readonly IUsuarioService _usuarioService;
 
         public InicioController(IUsuarioService usuarioService) {
 
             _usuarioService = usuarioService;
+
         }
+
         public IActionResult Registrarse()
         {
             return View();
@@ -42,14 +46,23 @@ namespace VeterinariaOrt.Controllers
         [HttpPost]
             public async Task<IActionResult> IniciarSesion(string mail, string clave)
             {
+
                 Usuario usuario_encontrado = await _usuarioService.GetUsuario(mail, Utils.EncriptarClave(clave));
-                if (usuario_encontrado == null)
+               
+            if (usuario_encontrado == null)
                 {
                     ViewData["Mensaje"] = "No se encontraron coincidencias";
                     return View();
-                }
-                List<Claim> claims = new List<Claim>() {
+            }
+            else {
+                string dniUsuario = usuario_encontrado.DNI.ToString();
+
+                HttpContext.Session.SetString("SDNI", dniUsuario);
+                HttpContext.Session.GetString("SDNI");
+            }
+            List<Claim> claims = new List<Claim>() {
                     new Claim(ClaimTypes.Name,usuario_encontrado.Nombre)
+                
                 };
 
                 ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

@@ -1,17 +1,19 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 using VeterinariaOrt.Models;
 
 namespace VeterinariaOrt.Controllers
 {
     public class TurnosController : Controller
     {
+        
        DAO_Turnos DAO_turnos = new DAO_Turnos();
+
         [HttpGet]
         [Authorize]
         public IActionResult Index()
         {
+
             List<Turnos> turnos = DAO_turnos.ListarTurnos();
             return View(turnos);
         }
@@ -20,7 +22,9 @@ namespace VeterinariaOrt.Controllers
         [Authorize]
         public ActionResult ReservarTurno(int turnoId)
         {
-            DAO_turnos.confirmarTurno(turnoId);
+            string Sdni = HttpContext.Session.GetString("SDNI");
+
+            DAO_turnos.confirmarTurno(turnoId,Sdni);
             return RedirectToAction("Index"); 
             
         }
@@ -28,9 +32,11 @@ namespace VeterinariaOrt.Controllers
         [HttpGet]
         [Authorize]
         
-        public IActionResult MisTurnos(int dni)
+        public IActionResult MisTurnos()
         {
-            List<Turnos> turnos = DAO_turnos.MisTurnos(dni);
+            string Sdni = HttpContext.Session.GetString("SDNI");
+
+            List<Turnos> turnos = DAO_turnos.MisTurnos(Sdni);
             return View(turnos);
         }
 

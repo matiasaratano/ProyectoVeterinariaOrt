@@ -1,7 +1,9 @@
 ﻿@model List<Turnos>;
 @{
     ViewData["Title"] = "Turnos";
+
 }
+
 
 <!DOCTYPE html>
 
@@ -26,10 +28,10 @@
                 @foreach (Turnos t in Model)
                 {
                     <tr>
-                        <td>@t.Id</td>
+                        <td>@t.Id </td>
                         <td>@t.Dia</td>
                         <td>@t.Hora</td>
-                        <td><button class="btn" type="submit" name="turnoId" value="@t.Id">Reservar</button></td>
+                        <td><button class="btn" type="submit" name="turnoId" value="@t.Id" >Reservar</button></td>
                     </tr>
                 }
 
@@ -74,5 +76,4 @@
         .table tbody tr:hover {
             background-color: #e6e6e6;
         }
-
 </style>

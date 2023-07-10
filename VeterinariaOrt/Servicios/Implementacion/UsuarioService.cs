@@ -1,7 +1,6 @@
 ﻿using VeterinariaOrt.Models;
 using VeterinariaOrt.Servicios.Contrato;
 using Microsoft.EntityFrameworkCore;
-
 namespace VeterinariaOrt.Servicios.Implementacion
 {
     public class UsuarioService : IUsuarioService
@@ -20,6 +19,9 @@ namespace VeterinariaOrt.Servicios.Implementacion
         public async Task<Usuario> GetUsuario(string mail, string clave)
         {
             Usuario usuarioEncontrado = await _dbContext.Usuario.Where(u=>u.Mail==mail && u.Clave==clave).FirstOrDefaultAsync();
+
+            //ISession session = (ISession)usuarioEncontrado;
+
             return usuarioEncontrado;
 
         }

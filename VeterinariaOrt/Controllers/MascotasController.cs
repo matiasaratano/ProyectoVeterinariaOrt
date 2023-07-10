@@ -11,6 +11,7 @@ namespace VeterinariaOrt.Controllers
         [Authorize]
         public IActionResult Index()
         {
+            ViewData["Dni"]= HttpContext.Session.GetString("SDNI");
             return View();
         }
 
