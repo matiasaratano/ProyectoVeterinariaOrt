@@ -21,7 +21,7 @@ namespace VeterinariaOrt.Controllers
         public IActionResult Index()
         {
            
-
+            //Valida si hay sesion y le asigna nombre de usuario
             ClaimsPrincipal claimsuser = HttpContext.User;
             string nombreUsuario = "";
            

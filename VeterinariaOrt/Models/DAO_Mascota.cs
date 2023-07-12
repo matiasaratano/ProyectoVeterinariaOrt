@@ -9,13 +9,10 @@ public class DAO_Mascota
 
     public void CrearMascota(Mascotas mascota)
     {
-
-
         try
         {
-                context.Mascotas.Add(mascota);
+            context.Mascotas.Add(mascota);
             context.SaveChanges();
-
 
         }
         catch (Exception ex)
@@ -24,8 +21,6 @@ public class DAO_Mascota
             Console.WriteLine("Ocurrió un error: " + ex.InnerException?.Message);
 
         }
-        
-
 
     }
 }

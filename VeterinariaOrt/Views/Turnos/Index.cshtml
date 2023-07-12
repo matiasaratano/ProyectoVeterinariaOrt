@@ -31,17 +31,14 @@
                         <td>@t.Id </td>
                         <td>@t.Dia</td>
                         <td>@t.Hora</td>
-                        <td><button class="btn" type="submit" name="turnoId" value="@t.Id" >Reservar</button></td>
+                        <td><button class="btn" type="submit" name="turnoId" value="@t.Id">Reservar</button></td>
                     </tr>
                 }
 
             </tbody>
         </table>
     </form>
-    @if (!string.IsNullOrEmpty(TempData["Mensaje"] as string))
-    {
-        <div class="alert alert-warning">@TempData["Mensaje"]</div>
-    }
+
 </body>
 </html>
 
